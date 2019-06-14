@@ -1,4 +1,4 @@
-package coinapi
+package setting
 
 type Send struct {
 	Address string

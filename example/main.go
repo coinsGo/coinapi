@@ -3,19 +3,14 @@ package main
 import (
 	"log"
 
-	"github.com/fanguanghui/coinapi"
-)
-
-var (
-	host = "192.168.199.141:20332"
-	user = "niubit"
-	pass = "niubit123"
+	"github.com/fanguanghui/coinapi/setting"
+	"github.com/fanguanghui/coinapi/wallet"
 )
 
 func main() {
-	factory := coinapi.Factory{}
-	usdt := factory.Get("USDT", host, user, pass)
-	balance := usdt.GetBalance("mt8Lvqmik6w4ZimnqDb8pKUupYyXFpjBQJ", 2)
+	factory := wallet.Factory{Environment: setting.Env_DEVELOPMENT}
+	usdt := factory.Get("USDT")
+	balance := usdt.GetBalance("mt8Lvqmik6w4ZimnqDb8pKUupYyXFpjBQJ")
 	log.Printf("查询余额：%s\n", balance)
 
 }
