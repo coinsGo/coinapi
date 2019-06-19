@@ -1,7 +1,7 @@
 package wallet
 
 import (
-	"github.com/fanguanghui/coinapi/setting"
+	"github.com/fanguanghui/coinapi/config"
 	"github.com/fanguanghui/coinrpc/eth"
 	"github.com/fanguanghui/coinrpc/rpc"
 )
@@ -32,14 +32,18 @@ func (this Ethereum) GetBalance(address string) (balance string) {
 	return
 }
 
-func (this Ethereum) GetTransaction() (tx *setting.Tx) {
+func (this Ethereum) GetTransaction(txid string) (tx config.Tx) {
 	return
 }
 
-func (this Ethereum) GetBlockCount() (count uint32) {
+func (this Ethereum) GetBlockCount() (index uint64) {
 	return
 }
 
-func (this Ethereum) GetBlockTxids() (txids *[]string) {
+func (this Ethereum) GetBlockTxids(index uint64) (txids []string) {
+	return
+}
+
+func (this Ethereum) GetPendingTxs(address string) (txs []config.Tx) {
 	return
 }

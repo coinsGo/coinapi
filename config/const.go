@@ -1,4 +1,4 @@
-package setting
+package config
 
 const (
 	Env_DEVELOPMENT string = "development"

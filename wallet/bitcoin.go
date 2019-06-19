@@ -1,7 +1,7 @@
 package wallet
 
 import (
-	"github.com/fanguanghui/coinapi/setting"
+	"github.com/fanguanghui/coinapi/config"
 	"github.com/fanguanghui/coinrpc/btc"
 	"github.com/fanguanghui/coinrpc/rpc"
 )
@@ -32,14 +32,18 @@ func (this Bitcoin) GetBalance(address string) (balance string) {
 	return
 }
 
-func (this Bitcoin) GetTransaction() (tx *setting.Tx) {
+func (this Bitcoin) GetTransaction(txid string) (tx config.Tx) {
 	return
 }
 
-func (this Bitcoin) GetBlockCount() (count uint32) {
+func (this Bitcoin) GetBlockCount() (index uint64) {
 	return
 }
 
-func (this Bitcoin) GetBlockTxids() (txids *[]string) {
+func (this Bitcoin) GetBlockTxids(index uint64) (txids []string) {
+	return
+}
+
+func (this Bitcoin) GetPendingTxs(address string) (txs []config.Tx) {
 	return
 }

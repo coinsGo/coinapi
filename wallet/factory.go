@@ -1,7 +1,7 @@
 package wallet
 
 import (
-	"github.com/fanguanghui/coinapi/setting"
+	"github.com/fanguanghui/coinapi/config"
 )
 
 type Factory struct {
@@ -10,16 +10,16 @@ type Factory struct {
 
 func (this Factory) Get(coinName string) Wallet {
 
-	setting.Setup(this.Environment)
+	config.Setup(this.Environment)
 
-	if coinName == setting.CoinName_USDT {
-		return NewTether(setting.UsdtCfg, this.Environment)
+	if coinName == config.CoinName_USDT {
+		return NewTether(config.UsdtCfg, this.Environment)
 
-	} else if coinName == setting.CoinName_BTC {
-		return NewBitcoin(setting.BtcCfg)
+	} else if coinName == config.CoinName_BTC {
+		return NewBitcoin(config.BtcCfg)
 
-	} else if coinName == setting.CoinName_ETH {
-		return NewEthereum(setting.EthCfg)
+	} else if coinName == config.CoinName_ETH {
+		return NewEthereum(config.EthCfg)
 
 	}
 	return nil

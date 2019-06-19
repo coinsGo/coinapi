@@ -1,4 +1,4 @@
-package setting
+package config
 
 import (
 	"log"
@@ -17,7 +17,7 @@ var cfg *ini.File
 
 func Setup(environment string) {
 	var err error
-	cfg, err = ini.Load("config/" + environment + ".ini")
+	cfg, err = ini.Load("./config/ini/" + environment + ".ini")
 	if err != nil {
 		log.Fatalf("config.Setup, fail to parse 'config/%v.ini': %v", environment, err)
 	}
