@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	factory := wallet.Factory{Environment: config.Env_DEVELOPMENT}
 	client := factory.Get("USDT")
 
