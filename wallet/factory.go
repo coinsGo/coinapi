@@ -13,13 +13,13 @@ func (this Factory) Get(coinName string) Wallet {
 	config.Setup(this.Environment)
 
 	if coinName == config.CoinName_USDT {
-		return NewTether(config.UsdtCfg, this.Environment)
+		return NewTether(&config.Usdtcfg, this.Environment)
 
 	} else if coinName == config.CoinName_BTC {
-		return NewBitcoin(config.BtcCfg)
+		return NewBitcoin(&config.Btccfg)
 
 	} else if coinName == config.CoinName_ETH {
-		return NewEthereum(config.EthCfg)
+		return NewEthereum(&config.Ethcfg)
 
 	}
 	return nil

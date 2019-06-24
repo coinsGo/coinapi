@@ -49,10 +49,10 @@ func (this Tether) CollectTransaction() (txid string) {
 func (this Tether) GetTransaction(txid string) (tx config.Tx) {
 	row := this.omni.GetTransaction(txid)
 	if row.Txid != "" && row.Propertyid == this.propertyid {
-		sends := [][2]string{
-			{row.Referenceaddress, row.Amount},
+		vouts := map[int]config.Vout{
+			0: {Address: row.Referenceaddress, Amount: row.Amount},
 		}
-		tx.Sends = &sends
+		tx.Vouts = vouts
 		tx.Txid = row.Txid
 		tx.From = row.Sendingaddress
 		tx.Cfms = row.Confirmations
@@ -77,10 +77,10 @@ func (this Tether) GetPendingTxs(address string) (txs []config.Tx) {
 	for _, row := range list {
 		if row.Txid != "" && row.Propertyid == this.propertyid {
 			tx := config.Tx{}
-			sends := [][2]string{
-				{row.Referenceaddress, row.Amount},
+			vouts := map[int]config.Vout{
+				0: {Address: row.Referenceaddress, Amount: row.Amount},
 			}
-			tx.Sends = &sends
+			tx.Vouts = vouts
 			tx.Txid = row.Txid
 			tx.From = row.Sendingaddress
 			tx.Cfms = row.Confirmations
