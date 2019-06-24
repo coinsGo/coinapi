@@ -7,9 +7,9 @@ const (
 )
 
 const (
-	CoinName_USDT string = "USDT"
-	CoinName_BTC  string = "BTC"
-	CoinName_ETH  string = "ETH"
+	Coinid_USDT int = 1
+	Coinid_BTC  int = 2
+	Coinid_ETH  int = 3
 )
 
 const (

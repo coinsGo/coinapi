@@ -12,7 +12,7 @@ import (
 func main() {
 
 	factory := wallet.Factory{Environment: config.Env_DEVELOPMENT}
-	client := factory.Get("USDT")
+	client := factory.Get(config.Coinid_USDT)
 
 	//address := client.NewAddress("")
 	//log.Printf("钱包地址：%s\n", address)
