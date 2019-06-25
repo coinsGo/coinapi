@@ -32,15 +32,15 @@ func (this Ethereum) GetBalance(address string) (balance string) {
 	return
 }
 
-func (this Ethereum) GetTransaction(txid string) (tx config.Tx) {
-	return
-}
-
 func (this Ethereum) GetBlockCount() (index uint64) {
 	return
 }
 
-func (this Ethereum) GetBlockTxids(index uint64) (txids []string) {
+func (this Ethereum) GetTxById(txid string) (tx config.Tx) {
+	return
+}
+
+func (this Ethereum) GetBlockTxs(index uint64) (txs []config.Tx) {
 	return
 }
 

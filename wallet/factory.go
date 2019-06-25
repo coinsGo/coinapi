@@ -8,17 +8,17 @@ type Factory struct {
 	Environment string
 }
 
-func (this Factory) Get(coinID int) Wallet {
+func (this Factory) Get(coinId uint) Wallet {
 
 	config.Setup(this.Environment)
 
-	if coinID == config.Coinid_USDT {
+	if coinId == config.CoinId_USDT {
 		return NewTether(&config.Usdtcfg, this.Environment)
 
-	} else if coinID == config.Coinid_BTC {
+	} else if coinId == config.CoinId_BTC {
 		return NewBitcoin(&config.Btccfg)
 
-	} else if coinID == config.Coinid_ETH {
+	} else if coinId == config.CoinId_ETH {
 		return NewEthereum(&config.Ethcfg)
 
 	}

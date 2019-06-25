@@ -46,7 +46,12 @@ func (this Tether) CollectTransaction() (txid string) {
 	return ""
 }
 
-func (this Tether) GetTransaction(txid string) (tx config.Tx) {
+func (this Tether) GetBlockCount() (count uint64) {
+	count = this.omni.GetBlockCount()
+	return
+}
+
+func (this Tether) GetTxById(txid string) (tx config.Tx) {
 	row := this.omni.GetTransaction(txid)
 	if row.Txid != "" && row.Propertyid == this.propertyid {
 		vouts := map[int]config.Vout{
@@ -62,13 +67,12 @@ func (this Tether) GetTransaction(txid string) (tx config.Tx) {
 	return
 }
 
-func (this Tether) GetBlockCount() (count uint64) {
-	count = this.omni.GetBlockCount()
-	return
-}
-
-func (this Tether) GetBlockTxids(index uint64) (txids []string) {
-	txids = this.omni.GetBlockTransactions(index)
+func (this Tether) GetBlockTxs(index uint64) (txs []config.Tx) {
+	txids := this.omni.GetBlockTransactions(index)
+	for _, txid := range txids {
+		tx := this.GetTxById(txid)
+		txs = append(txs, tx)
+	}
 	return
 }
 

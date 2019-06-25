@@ -24,11 +24,11 @@ type Wallet interface {
 
 	CollectTransaction() (txid string)
 
-	GetTransaction(txid string) (tx config.Tx)
-
 	GetBlockCount() (index uint64)
 
-	GetBlockTxids(index uint64) (txids []string)
+	GetTxById(txid string) (tx config.Tx)
+
+	GetBlockTxs(index uint64) (txids []config.Tx)
 
 	GetPendingTxs(address string) (txs []config.Tx)
 }

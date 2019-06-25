@@ -12,7 +12,7 @@ import (
 func main() {
 
 	factory := wallet.Factory{Environment: config.Env_DEVELOPMENT}
-	client := factory.Get(config.Coinid_USDT)
+	client := factory.Get(config.CoinId_USDT)
 
 	//address := client.NewAddress("")
 	//log.Printf("钱包地址：%s\n", address)
@@ -30,11 +30,11 @@ func main() {
 	index := client.GetBlockCount()
 	log.Println(index)
 
-	txids := client.GetBlockTxids(1560835)
-	log.Println(txids)
-	log.Println(txids[0])
+	txs := client.GetBlockTxs(1560835)
+	log.Println(txs)
+	log.Println(txs[0])
 
-	txs := client.GetPendingTxs("")
+	txs = client.GetPendingTxs("")
 	log.Println(txs)
 
 	println(os.Getenv("HOME"))

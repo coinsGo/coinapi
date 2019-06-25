@@ -32,15 +32,15 @@ func (this Bitcoin) GetBalance(address string) (balance string) {
 	return
 }
 
-func (this Bitcoin) GetTransaction(txid string) (tx config.Tx) {
-	return
-}
-
 func (this Bitcoin) GetBlockCount() (index uint64) {
 	return
 }
 
-func (this Bitcoin) GetBlockTxids(index uint64) (txids []string) {
+func (this Bitcoin) GetTxById(txid string) (tx config.Tx) {
+	return
+}
+
+func (this Bitcoin) GetBlockTxs(index uint64) (txs []config.Tx) {
 	return
 }
 
