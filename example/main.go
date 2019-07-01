@@ -4,9 +4,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/fanguanghui/coinapi/config"
+	"github.com/go-develop/coinapi/config"
 
-	"github.com/fanguanghui/coinapi/wallet"
+	"github.com/go-develop/coinapi/wallet"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 	txid := client.SendTransaction("mipvXNuvsoD9JvxCiG6MeKB4noyp3e88ME", "mgBg7ZRXaxybbCQeFqKnGXvVCECoPV4LYb", "0.005", "mt8Lvqmik6w4ZimnqDb8pKUupYyXFpjBQJ")
 	log.Println(txid)
 
-	tx := client.GetTransaction("0ef9b5e05f68480dd745768bac73382d2b5ee2f2c914bcec51f0d79e05374707")
+	tx := client.GetTxById("0ef9b5e05f68480dd745768bac73382d2b5ee2f2c914bcec51f0d79e05374707")
 	log.Println(tx)
 
 	index := client.GetBlockCount()

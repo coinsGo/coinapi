@@ -1,9 +1,9 @@
 package wallet
 
 import (
-	"github.com/fanguanghui/coinapi/config"
-	"github.com/fanguanghui/coinrpc/rpc"
-	"github.com/fanguanghui/coinrpc/usdt"
+	"github.com/go-develop/coinapi/config"
+	"github.com/go-develop/coinrpc/rpc"
+	"github.com/go-develop/coinrpc/usdt"
 )
 
 type Tether struct {

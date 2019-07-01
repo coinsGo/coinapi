@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/fanguanghui/coinrpc/rpc"
+	"github.com/go-develop/coinrpc/rpc"
 	"github.com/go-ini/ini"
 )
 

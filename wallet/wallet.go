@@ -1,7 +1,7 @@
 package wallet
 
 import (
-	"github.com/fanguanghui/coinapi/config"
+	"github.com/go-develop/coinapi/config"
 )
 
 type Wallet interface {
